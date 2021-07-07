@@ -3,6 +3,7 @@ import java.util.*;
 
 public class datastructures {
     // Datastructures are built in with functions such as (1) add, (2) remove, (3) size(), (4) isEmpty()
+    static TreeMap<Integer, Integer> multiset = new TreeMap<Integer, Integer>();
     public static void main(String[] args) {
         // Arrays
         ArrayList<Integer> list = new ArrayList<Integer>();
@@ -42,5 +43,69 @@ public class datastructures {
         deque.removeFirst();
         deque.removeLast();
         System.out.println(deque);
+        System.out.println();
+
+
+        // Priority Queues
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+        pq.add(3); pq.add(2); pq.add(7); pq.add(10);
+        System.out.println(pq);
+        pq.poll();
+        System.out.println(pq);
+        System.out.println();
+
+
+        // Sets and Maps
+        // Unordered set
+        HashSet<Integer> set = new HashSet<>();
+        set.add(1); set.add(5); set.add(34);
+        System.out.println(set);
+        set.remove(1);
+        System.out.println(set.contains(5));
+        System.out.println();
+
+        // Ordered set
+        TreeSet<Integer> oset = new TreeSet<>();
+        oset.add(1); oset.add(5); oset.add(34);
+        System.out.println(oset.higher(7));
+        System.out.println(oset.lower(5));
+        System.out.println(oset.first());
+        System.out.println(oset.last());
+        System.out.println();
+        
+        // Maps
+        // Unordered map
+        HashMap<Integer, Integer> umap = new HashMap<Integer, Integer>();
+        umap.put(3, 5); umap.put(4, 18); umap.put(2, 7); umap.put(1, 9);
+        System.out.println(umap);
+        umap.remove(2);
+        System.out.println(umap);
+        System.out.println(umap.containsKey(4));
+        System.out.println();
+
+        // Ordered map
+        TreeMap<Integer, Integer> omap = new TreeMap<Integer, Integer>();
+        omap.put(3, 5);
+        omap.put(4, 5);
+        System.out.println(omap.lastEntry());
+        System.out.println(omap.firstEntry());
+        System.out.println(omap);
+        System.out.println();
+
+    }
+
+    static void add(int x) {
+        if (multiset.containsKey(x)) {
+            multiset.put(x, multiset.get(x) + 1);
+        } else {
+            multiset.put(x, 1);
+        }
+    }
+
+    static void remove(int x) {
+        multiset.put(x, multiset.get(x) - 1);
+        if (multiset.get(x) == 0) {
+            multiset.remove(x);
+        }
     }
 }
