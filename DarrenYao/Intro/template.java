@@ -4,7 +4,7 @@ import java.util.*;
 public class template {
     static class InputReader {
         BufferedReader reader;
-        StringTokeneizer tokeneizer;
+        StringTokenizer tokeneizer;
 
         public InputReader(InputStream stream) {
             reader = new BufferedReader(new InputStreamReader(stream), 32768);
@@ -14,7 +14,7 @@ public class template {
         String next() {
             while (tokeneizer == null || !tokeneizer.hasMoreTokens()) {
                 try {
-                    tokeneizer = new StringTokeneizer(reader.readLine());
+                    tokeneizer = new StringTokenizer(reader.readLine());
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -38,11 +38,11 @@ public class template {
     static PrintWriter pw = new PrintWriter(System.out);
 
     public static void main(String[] args) throws IOException{
-        BufferedReader r = new BufferedReader(new FileWriter("template.in"));
+        BufferedReader r = new BufferedReader(new FileReader("template.in"));
         PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("template.out")));
 
-        StringTokenizer st = new.StringTokeneizer(r.readLine());
-        int n = Integer.parseInt(st.nextToken());
+        // StringTokenizer st = new StringTokenizer(r.readLine());
+        // int n = Integer.parseInt(st.nextToken());
 
         r.close();
         pw.close();
