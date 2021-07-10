@@ -45,5 +45,6 @@
 - unordered map: add specified key-value pair, retrieve value of given key, remove key-value pair, firstKey, lastKey, higherKey/higherEntry, lowerKey/lowerEntry
 - unordered map: O(1)
 - ordered map: O(log(n))
+- Multiset: allow duplicates
 
 ### Note: in codeforces always use ordered maps and sets!
