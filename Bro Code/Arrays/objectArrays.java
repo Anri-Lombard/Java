@@ -1,3 +1,4 @@
+package Arrays;
 public class objectArrays {
     public static void main(String[] args) {
         // int[] numbers = new int[3];

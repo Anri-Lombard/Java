@@ -1,3 +1,4 @@
+package Classes;
 public class objectPassing {
     public static void main(String[] args) {
         Garage garage = new Garage();

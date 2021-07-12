@@ -52,6 +52,22 @@ public class bucky {
         for(int i = 0; i  <list1.size(); i++) {
             System.out.printf("%s ", list1.get(i));
         }
+
+
+        // Linked lists
+        String[] things = {"apples", "noobs", "pwnge", "bacon", "goats"};
+        List<String> list1 = new LinkedList<String>();
+        for (String x: things)
+            list1.add(x);
+
+        String[] things2 = {"strawberries". "blueberries", "bacon", "goats", "harrypotter"};
+        List<String> list2 = new LinkedList<String>();
+        for (String y: things2)
+            list2.add(y);
+
+        list1.addAll(list2);
+
+        
     }
 
     public static void editlist (Collection<String> l1, Collection<String> l2) {

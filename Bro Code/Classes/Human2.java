@@ -1,3 +1,4 @@
+package Classes;
 public class Human2 {
     public static void main(String[] args) {
         Human1 human = new Human1("Nick", 65, 79);
