@@ -1,18 +1,17 @@
-import javax.swing.JPanel;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import java.util.*;
+import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
 
     static final int SCREEN_WIDTH = 600;
     static final int SCREEN_HEIGHT = 600;
     static final int UNIT_SIZE = 25;
-    static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/UNIT_SIZE;
+    static final int GAME_UNITS = (SCREEN_WIDTH*SCREEN_HEIGHT)/(UNIT_SIZE*UNIT_SIZE);
     static final int DELAY = 75;
     final int x[] = new int[GAME_UNITS];
-    final int y[] = new int(GAME_UNITS);
+    final int y[] = new int[GAME_UNITS];
     int bodyParts = 6;
     int applesEaten, appleX, appleY;
     char direction = 'R';
@@ -59,6 +58,13 @@ public class GamePanel extends JPanel implements ActionListener {
                     g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
                 }
             }
+            g.setColor(Color.red);
+            g.setFont(new Font("TimesRoman", Font.BOLD | Font.ITALIC, 40));
+            FontMetrics metrics = getFontMetrics(g.getFont());
+            g.drawString("Score: "+ applesEaten, (SCREEN_WIDTH - metrics.stringWidth("Score: "+ applesEaten))/2, g.getFont().getSize());
+        }
+        else {
+            gameOver(g);
         }
     }
 
@@ -131,10 +137,17 @@ public class GamePanel extends JPanel implements ActionListener {
         }
     }
 
-    public void gameOver() {
+    public void gameOver(Graphics g) {
         // Game Over
         g.setColor(Color.red);
-        g.setFont("Times Roman")
+        g.setFont(new Font("TimesRoman", Font.BOLD | Font.ITALIC, 75));
+        FontMetrics metrics1 = getFontMetrics(g.getFont());
+        g.drawString("Game Over", (SCREEN_WIDTH - metrics1.stringWidth("GAME OVER"))/2, SCREEN_HEIGHT);
+
+        g.setColor(Color.red);
+        g.setFont(new Font("TimesRoman", Font.BOLD | Font.ITALIC, 40));
+        FontMetrics metrics2 = getFontMetrics(g.getFont());
+        g.drawString("Score: "+ applesEaten, (SCREEN_WIDTH - metrics2.stringWidth("Score: "+ applesEaten))/2, g.getFont().getSize());
     }
 
     @Override
@@ -149,16 +162,26 @@ public class GamePanel extends JPanel implements ActionListener {
 
     public class MyKeyAdapter extends KeyAdapter{
         @Override
-        public void keyPressed(keyEvent e) {
+        public void keyPressed(KeyEvent e) {
             switch(e.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
                     if (direction != 'R') {
                         direction = 'L';
                     }
                     break;
-                case KeyEvent.VK_UP;
+                case KeyEvent.VK_RIGHT:
+                    if (direction != 'L') {
+                        direction = 'R';
+                    }
+                    break;
+                case KeyEvent.VK_UP:
                     if (direction != 'D') {
                         direction = 'U';
+                    }
+                    break;
+                case KeyEvent.VK_DOWN:
+                    if (direction != 'U') {
+                        direction = 'D';
                     }
                     break;
             }
