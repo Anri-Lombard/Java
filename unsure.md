@@ -3,3 +3,5 @@
 - What is bufferedReader?
 - StringBuilder
 - Integer.valueOf...
+- Regex!!!
+- Java generics
