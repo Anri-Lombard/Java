@@ -12,7 +12,7 @@ class Printer
     }
 }
 
-public class Solution {
+public class JavaGenerics {
 
 
     public static void main( String args[] ) {
