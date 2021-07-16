@@ -4,9 +4,35 @@ import java.util.Scanner;
 /*
  * Create the Student and Priorities classes here.
  */
+class Student {
+    private final int id;
+    private final String name;
+    private final double cgpa;
+    
+    public Student(int id, String name, double cgpa) {
+        this.id = id;
+        this.name = name;
+        this.cgpa = cgpa;
+    }
+    
+    public int getID() {
+        return id;
+    }
+    
+    public String getName() {
+        return name;
+    }
+    
+    public double getCGPA() {
+        return cgpa;
+    }
+}
 
+class Priorities() {
+    private final Comparator<Student> studentComparator = Comparator.comparing(Student::getCGPA).reversed().thenComparing(Student::getName).thenComparing(Student::getID);
+}
 
-public class Solution {
+public class JavaPriorityQueue {
     private final static Scanner scan = new Scanner(System.in);
     private final static Priorities priorities = new Priorities();
     
