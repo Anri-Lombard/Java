@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
         "GeeksForGeeks",
-        "DataStucturesAndAlgorithms/Graphtheory"
+        "DataStucturesAndAlgorithms/Graphtheory",
+        "DataStucturesAndAlgorithms/DataStructures"
     ]
 }
