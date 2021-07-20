@@ -1,7 +1,9 @@
 {
     "java.project.sourcePaths": [
+        "HackerEarth/ArraysAndStrings/Tutorials",
         "GeeksForGeeks",
         "DataStucturesAndAlgorithms/Graphtheory",
-        "DataStucturesAndAlgorithms/DataStructures"
+        "DataStucturesAndAlgorithms/DataStructures",
+        "CodeChef"
     ]
 }
