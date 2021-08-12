@@ -817,5 +817,3 @@ class FastScanner
     }
 }
 //use for codeforces!public class template {
-    
-}
